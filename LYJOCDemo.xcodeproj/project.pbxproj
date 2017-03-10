@@ -1,0 +1,820 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B1E3C9D342386DB16689262 /* libPods-LYJOCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB79B3363FB641A0E594CB5 /* libPods-LYJOCDemo.a */; };
+		C5167B241E723FAA00224AAF /* VerticalBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B231E723FAA00224AAF /* VerticalBannerViewController.m */; };
+		C5167B281E7249EC00224AAF /* VerticalBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B271E7249EC00224AAF /* VerticalBannerCell.m */; };
+		C5167B2B1E724B3200224AAF /* VerticalBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B2A1E724B3200224AAF /* VerticalBannerView.m */; };
+		C5167B2E1E72764000224AAF /* GlobalFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B2D1E72764000224AAF /* GlobalFunc.m */; };
+		C5167B311E7276ED00224AAF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B301E7276ED00224AAF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C5167B341E727CDF00224AAF /* BannerContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B331E727CDF00224AAF /* BannerContentView.m */; };
+		C57954551E67B0F70011CC45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954541E67B0F70011CC45 /* main.m */; };
+		C57954581E67B0F70011CC45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954571E67B0F70011CC45 /* AppDelegate.m */; };
+		C579545B1E67B0F70011CC45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C579545A1E67B0F70011CC45 /* ViewController.m */; };
+		C579545E1E67B0F70011CC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C579545C1E67B0F70011CC45 /* Main.storyboard */; };
+		C57954631E67B0F70011CC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57954621E67B0F70011CC45 /* Assets.xcassets */; };
+		C57954661E67B0F70011CC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57954641E67B0F70011CC45 /* LaunchScreen.storyboard */; };
+		C57954711E67B0F70011CC45 /* LYJOCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954701E67B0F70011CC45 /* LYJOCDemoTests.m */; };
+		C579547C1E67B0F70011CC45 /* LYJOCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C579547B1E67B0F70011CC45 /* LYJOCDemoUITests.m */; };
+		C59265011E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C59265001E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m */; };
+		C59265101E67D1B1003CA8B9 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C592650F1E67D1B1003CA8B9 /* UIViewController+Extension.m */; };
+		C59265131E67D1F7003CA8B9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C59265121E67D1F7003CA8B9 /* UIView+Extension.m */; };
+		C59265161E67EE37003CA8B9 /* ViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C59265151E67EE37003CA8B9 /* ViewTableViewCell.m */; };
+		C59265231E691030003CA8B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59265221E691030003CA8B9 /* CoreData.framework */; };
+		C59265341E691389003CA8B9 /* TestCocoDataCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = C59265331E691389003CA8B9 /* TestCocoDataCtl.m */; };
+		C59265371E69226A003CA8B9 /* LYJOCDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C59265351E69226A003CA8B9 /* LYJOCDemo.xcdatamodeld */; };
+		C592653D1E6922AE003CA8B9 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C592653B1E6922AE003CA8B9 /* Person+CoreDataProperties.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C579546D1E67B0F70011CC45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C57954481E67B0F70011CC45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C579544F1E67B0F70011CC45;
+			remoteInfo = LYJOCDemo;
+		};
+		C57954781E67B0F70011CC45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C57954481E67B0F70011CC45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C579544F1E67B0F70011CC45;
+			remoteInfo = LYJOCDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C31723FE0D7BB82475C6529 /* Pods-LYJOCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYJOCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3CB79B3363FB641A0E594CB5 /* libPods-LYJOCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYJOCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FA0B9CB1969CB3F4831100F /* Pods-LYJOCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYJOCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C5167B221E723FAA00224AAF /* VerticalBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalBannerViewController.h; sourceTree = "<group>"; };
+		C5167B231E723FAA00224AAF /* VerticalBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalBannerViewController.m; sourceTree = "<group>"; };
+		C5167B261E7249EC00224AAF /* VerticalBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalBannerCell.h; sourceTree = "<group>"; };
+		C5167B271E7249EC00224AAF /* VerticalBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalBannerCell.m; sourceTree = "<group>"; };
+		C5167B291E724B3200224AAF /* VerticalBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalBannerView.h; sourceTree = "<group>"; };
+		C5167B2A1E724B3200224AAF /* VerticalBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalBannerView.m; sourceTree = "<group>"; };
+		C5167B2C1E72764000224AAF /* GlobalFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFunc.h; sourceTree = "<group>"; };
+		C5167B2D1E72764000224AAF /* GlobalFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFunc.m; sourceTree = "<group>"; };
+		C5167B2F1E7276ED00224AAF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C5167B301E7276ED00224AAF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C5167B321E727CDF00224AAF /* BannerContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerContentView.h; sourceTree = "<group>"; };
+		C5167B331E727CDF00224AAF /* BannerContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerContentView.m; sourceTree = "<group>"; };
+		C57954501E67B0F70011CC45 /* LYJOCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYJOCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C57954541E67B0F70011CC45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C57954561E67B0F70011CC45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C57954571E67B0F70011CC45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C57954591E67B0F70011CC45 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C579545A1E67B0F70011CC45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C579545D1E67B0F70011CC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C57954621E67B0F70011CC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C57954651E67B0F70011CC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C57954671E67B0F70011CC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C579546C1E67B0F70011CC45 /* LYJOCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYJOCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C57954701E67B0F70011CC45 /* LYJOCDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYJOCDemoTests.m; sourceTree = "<group>"; };
+		C57954721E67B0F70011CC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C57954771E67B0F70011CC45 /* LYJOCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYJOCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C579547B1E67B0F70011CC45 /* LYJOCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYJOCDemoUITests.m; sourceTree = "<group>"; };
+		C579547D1E67B0F70011CC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C59264FD1E67C86B003CA8B9 /* LYJOCDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LYJOCDemo-Prefix.pch"; sourceTree = "<group>"; };
+		C59264FF1E67CBC1003CA8B9 /* NSMutableDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Extension.h"; sourceTree = "<group>"; };
+		C59265001E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Extension.m"; sourceTree = "<group>"; };
+		C59265071E67CDE1003CA8B9 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
+		C592650E1E67D1B1003CA8B9 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		C592650F1E67D1B1003CA8B9 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		C59265111E67D1F7003CA8B9 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C59265121E67D1F7003CA8B9 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		C59265141E67EE37003CA8B9 /* ViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTableViewCell.h; sourceTree = "<group>"; };
+		C59265151E67EE37003CA8B9 /* ViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTableViewCell.m; sourceTree = "<group>"; };
+		C59265221E691030003CA8B9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C59265321E691389003CA8B9 /* TestCocoDataCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCocoDataCtl.h; sourceTree = "<group>"; };
+		C59265331E691389003CA8B9 /* TestCocoDataCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCocoDataCtl.m; sourceTree = "<group>"; };
+		C59265361E69226A003CA8B9 /* LYJOCDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LYJOCDemo.xcdatamodel; sourceTree = "<group>"; };
+		C59265381E6922AE003CA8B9 /* Person+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
+		C59265391E6922AE003CA8B9 /* Person+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
+		C592653A1E6922AE003CA8B9 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C592653B1E6922AE003CA8B9 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C579544D1E67B0F70011CC45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59265231E691030003CA8B9 /* CoreData.framework in Frameworks */,
+				4B1E3C9D342386DB16689262 /* libPods-LYJOCDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57954691E67B0F70011CC45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57954741E67B0F70011CC45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BF25895F3AD7150E3A0B661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C59265221E691030003CA8B9 /* CoreData.framework */,
+				3CB79B3363FB641A0E594CB5 /* libPods-LYJOCDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5167B1E1E723F9700224AAF /* VerticalBanner */ = {
+			isa = PBXGroup;
+			children = (
+				C5167B1F1E723F9700224AAF /* C */,
+				C5167B201E723F9700224AAF /* M */,
+				C5167B211E723F9700224AAF /* V */,
+			);
+			path = VerticalBanner;
+			sourceTree = "<group>";
+		};
+		C5167B1F1E723F9700224AAF /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C5167B221E723FAA00224AAF /* VerticalBannerViewController.h */,
+				C5167B231E723FAA00224AAF /* VerticalBannerViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C5167B201E723F9700224AAF /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C5167B211E723F9700224AAF /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C5167B251E72492C00224AAF /* Cells */,
+				C5167B291E724B3200224AAF /* VerticalBannerView.h */,
+				C5167B2A1E724B3200224AAF /* VerticalBannerView.m */,
+				C5167B321E727CDF00224AAF /* BannerContentView.h */,
+				C5167B331E727CDF00224AAF /* BannerContentView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C5167B251E72492C00224AAF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5167B261E7249EC00224AAF /* VerticalBannerCell.h */,
+				C5167B271E7249EC00224AAF /* VerticalBannerCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C57954471E67B0F70011CC45 = {
+			isa = PBXGroup;
+			children = (
+				C57954521E67B0F70011CC45 /* LYJOCDemo */,
+				C579546F1E67B0F70011CC45 /* LYJOCDemoTests */,
+				C579547A1E67B0F70011CC45 /* LYJOCDemoUITests */,
+				C57954511E67B0F70011CC45 /* Products */,
+				F019B0D0B433BC3B2B4D5AEE /* Pods */,
+				3BF25895F3AD7150E3A0B661 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C57954511E67B0F70011CC45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C57954501E67B0F70011CC45 /* LYJOCDemo.app */,
+				C579546C1E67B0F70011CC45 /* LYJOCDemoTests.xctest */,
+				C57954771E67B0F70011CC45 /* LYJOCDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C57954521E67B0F70011CC45 /* LYJOCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C5167B1E1E723F9700224AAF /* VerticalBanner */,
+				C592651B1E69079E003CA8B9 /* CocoData */,
+				C59264FC1E67C7DB003CA8B9 /* Utl */,
+				C57954561E67B0F70011CC45 /* AppDelegate.h */,
+				C57954571E67B0F70011CC45 /* AppDelegate.m */,
+				C59265141E67EE37003CA8B9 /* ViewTableViewCell.h */,
+				C59265151E67EE37003CA8B9 /* ViewTableViewCell.m */,
+				C57954591E67B0F70011CC45 /* ViewController.h */,
+				C579545A1E67B0F70011CC45 /* ViewController.m */,
+				C579545C1E67B0F70011CC45 /* Main.storyboard */,
+				C57954621E67B0F70011CC45 /* Assets.xcassets */,
+				C57954641E67B0F70011CC45 /* LaunchScreen.storyboard */,
+				C57954671E67B0F70011CC45 /* Info.plist */,
+				C57954531E67B0F70011CC45 /* Supporting Files */,
+			);
+			path = LYJOCDemo;
+			sourceTree = "<group>";
+		};
+		C57954531E67B0F70011CC45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C57954541E67B0F70011CC45 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C579546F1E67B0F70011CC45 /* LYJOCDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				C57954701E67B0F70011CC45 /* LYJOCDemoTests.m */,
+				C57954721E67B0F70011CC45 /* Info.plist */,
+			);
+			path = LYJOCDemoTests;
+			sourceTree = "<group>";
+		};
+		C579547A1E67B0F70011CC45 /* LYJOCDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C579547B1E67B0F70011CC45 /* LYJOCDemoUITests.m */,
+				C579547D1E67B0F70011CC45 /* Info.plist */,
+			);
+			path = LYJOCDemoUITests;
+			sourceTree = "<group>";
+		};
+		C59264FC1E67C7DB003CA8B9 /* Utl */ = {
+			isa = PBXGroup;
+			children = (
+				C59264FE1E67C9A4003CA8B9 /* Extension */,
+				C59264FD1E67C86B003CA8B9 /* LYJOCDemo-Prefix.pch */,
+				C59265071E67CDE1003CA8B9 /* UtilsMacro.h */,
+				C5167B2F1E7276ED00224AAF /* Reachability.h */,
+				C5167B301E7276ED00224AAF /* Reachability.m */,
+				C5167B2C1E72764000224AAF /* GlobalFunc.h */,
+				C5167B2D1E72764000224AAF /* GlobalFunc.m */,
+			);
+			path = Utl;
+			sourceTree = "<group>";
+		};
+		C59264FE1E67C9A4003CA8B9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C59264FF1E67CBC1003CA8B9 /* NSMutableDictionary+Extension.h */,
+				C59265001E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m */,
+				C592650E1E67D1B1003CA8B9 /* UIViewController+Extension.h */,
+				C592650F1E67D1B1003CA8B9 /* UIViewController+Extension.m */,
+				C59265111E67D1F7003CA8B9 /* UIView+Extension.h */,
+				C59265121E67D1F7003CA8B9 /* UIView+Extension.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C592651B1E69079E003CA8B9 /* CocoData */ = {
+			isa = PBXGroup;
+			children = (
+				C592651C1E69079E003CA8B9 /* C */,
+				C592651D1E69079E003CA8B9 /* M */,
+				C592651E1E69079E003CA8B9 /* V */,
+			);
+			path = CocoData;
+			sourceTree = "<group>";
+		};
+		C592651C1E69079E003CA8B9 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C59265321E691389003CA8B9 /* TestCocoDataCtl.h */,
+				C59265331E691389003CA8B9 /* TestCocoDataCtl.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C592651D1E69079E003CA8B9 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C59265381E6922AE003CA8B9 /* Person+CoreDataClass.h */,
+				C59265391E6922AE003CA8B9 /* Person+CoreDataClass.m */,
+				C592653A1E6922AE003CA8B9 /* Person+CoreDataProperties.h */,
+				C592653B1E6922AE003CA8B9 /* Person+CoreDataProperties.m */,
+				C59265351E69226A003CA8B9 /* LYJOCDemo.xcdatamodeld */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C592651E1E69079E003CA8B9 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		F019B0D0B433BC3B2B4D5AEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C31723FE0D7BB82475C6529 /* Pods-LYJOCDemo.debug.xcconfig */,
+				3FA0B9CB1969CB3F4831100F /* Pods-LYJOCDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C579544F1E67B0F70011CC45 /* LYJOCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C57954801E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemo" */;
+			buildPhases = (
+				98429072C69AB3F0A3787EE3 /* [CP] Check Pods Manifest.lock */,
+				C579544C1E67B0F70011CC45 /* Sources */,
+				C579544D1E67B0F70011CC45 /* Frameworks */,
+				C579544E1E67B0F70011CC45 /* Resources */,
+				7AE5BB8D8233A29A88B555FE /* [CP] Embed Pods Frameworks */,
+				4168F82A1DDCFBEEC39103A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYJOCDemo;
+			productName = LYJOCDemo;
+			productReference = C57954501E67B0F70011CC45 /* LYJOCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C579546B1E67B0F70011CC45 /* LYJOCDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C57954831E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemoTests" */;
+			buildPhases = (
+				C57954681E67B0F70011CC45 /* Sources */,
+				C57954691E67B0F70011CC45 /* Frameworks */,
+				C579546A1E67B0F70011CC45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C579546E1E67B0F70011CC45 /* PBXTargetDependency */,
+			);
+			name = LYJOCDemoTests;
+			productName = LYJOCDemoTests;
+			productReference = C579546C1E67B0F70011CC45 /* LYJOCDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C57954761E67B0F70011CC45 /* LYJOCDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C57954861E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemoUITests" */;
+			buildPhases = (
+				C57954731E67B0F70011CC45 /* Sources */,
+				C57954741E67B0F70011CC45 /* Frameworks */,
+				C57954751E67B0F70011CC45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C57954791E67B0F70011CC45 /* PBXTargetDependency */,
+			);
+			name = LYJOCDemoUITests;
+			productName = LYJOCDemoUITests;
+			productReference = C57954771E67B0F70011CC45 /* LYJOCDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C57954481E67B0F70011CC45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = hand;
+				TargetAttributes = {
+					C579544F1E67B0F70011CC45 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XMRA9CS64A;
+						ProvisioningStyle = Manual;
+					};
+					C579546B1E67B0F70011CC45 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XMRA9CS64A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C579544F1E67B0F70011CC45;
+					};
+					C57954761E67B0F70011CC45 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XMRA9CS64A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C579544F1E67B0F70011CC45;
+					};
+				};
+			};
+			buildConfigurationList = C579544B1E67B0F70011CC45 /* Build configuration list for PBXProject "LYJOCDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C57954471E67B0F70011CC45;
+			productRefGroup = C57954511E67B0F70011CC45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C579544F1E67B0F70011CC45 /* LYJOCDemo */,
+				C579546B1E67B0F70011CC45 /* LYJOCDemoTests */,
+				C57954761E67B0F70011CC45 /* LYJOCDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C579544E1E67B0F70011CC45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C57954661E67B0F70011CC45 /* LaunchScreen.storyboard in Resources */,
+				C57954631E67B0F70011CC45 /* Assets.xcassets in Resources */,
+				C579545E1E67B0F70011CC45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C579546A1E67B0F70011CC45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57954751E67B0F70011CC45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4168F82A1DDCFBEEC39103A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE5BB8D8233A29A88B555FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98429072C69AB3F0A3787EE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C579544C1E67B0F70011CC45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5167B241E723FAA00224AAF /* VerticalBannerViewController.m in Sources */,
+				C59265101E67D1B1003CA8B9 /* UIViewController+Extension.m in Sources */,
+				C579545B1E67B0F70011CC45 /* ViewController.m in Sources */,
+				C57954581E67B0F70011CC45 /* AppDelegate.m in Sources */,
+				C5167B311E7276ED00224AAF /* Reachability.m in Sources */,
+				C59265011E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m in Sources */,
+				C592653D1E6922AE003CA8B9 /* Person+CoreDataProperties.m in Sources */,
+				C5167B2E1E72764000224AAF /* GlobalFunc.m in Sources */,
+				C59265131E67D1F7003CA8B9 /* UIView+Extension.m in Sources */,
+				C5167B281E7249EC00224AAF /* VerticalBannerCell.m in Sources */,
+				C5167B341E727CDF00224AAF /* BannerContentView.m in Sources */,
+				C57954551E67B0F70011CC45 /* main.m in Sources */,
+				C5167B2B1E724B3200224AAF /* VerticalBannerView.m in Sources */,
+				C59265341E691389003CA8B9 /* TestCocoDataCtl.m in Sources */,
+				C59265371E69226A003CA8B9 /* LYJOCDemo.xcdatamodeld in Sources */,
+				C59265161E67EE37003CA8B9 /* ViewTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57954681E67B0F70011CC45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C57954711E67B0F70011CC45 /* LYJOCDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57954731E67B0F70011CC45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C579547C1E67B0F70011CC45 /* LYJOCDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C579546E1E67B0F70011CC45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C579544F1E67B0F70011CC45 /* LYJOCDemo */;
+			targetProxy = C579546D1E67B0F70011CC45 /* PBXContainerItemProxy */;
+		};
+		C57954791E67B0F70011CC45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C579544F1E67B0F70011CC45 /* LYJOCDemo */;
+			targetProxy = C57954781E67B0F70011CC45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C579545C1E67B0F70011CC45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C579545D1E67B0F70011CC45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C57954641E67B0F70011CC45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C57954651E67B0F70011CC45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C579547E1E67B0F70011CC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LYJOCDemo/Utl/LYJOCDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C579547F1E67B0F70011CC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LYJOCDemo/Utl/LYJOCDemo-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C57954811E67B0F70011CC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C31723FE0D7BB82475C6529 /* Pods-LYJOCDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = LYJOCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f73a137-26c7-42c7-b2bb-2d19621d3898";
+				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+			};
+			name = Debug;
+		};
+		C57954821E67B0F70011CC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FA0B9CB1969CB3F4831100F /* Pods-LYJOCDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = LYJOCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f73a137-26c7-42c7-b2bb-2d19621d3898";
+				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+			};
+			name = Release;
+		};
+		C57954841E67B0F70011CC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				INFOPLIST_FILE = LYJOCDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYJOCDemo.app/LYJOCDemo";
+			};
+			name = Debug;
+		};
+		C57954851E67B0F70011CC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				INFOPLIST_FILE = LYJOCDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYJOCDemo.app/LYJOCDemo";
+			};
+			name = Release;
+		};
+		C57954871E67B0F70011CC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				INFOPLIST_FILE = LYJOCDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LYJOCDemo;
+			};
+			name = Debug;
+		};
+		C57954881E67B0F70011CC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XMRA9CS64A;
+				INFOPLIST_FILE = LYJOCDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hand.LYJOCDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LYJOCDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C579544B1E67B0F70011CC45 /* Build configuration list for PBXProject "LYJOCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C579547E1E67B0F70011CC45 /* Debug */,
+				C579547F1E67B0F70011CC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C57954801E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C57954811E67B0F70011CC45 /* Debug */,
+				C57954821E67B0F70011CC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C57954831E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C57954841E67B0F70011CC45 /* Debug */,
+				C57954851E67B0F70011CC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C57954861E67B0F70011CC45 /* Build configuration list for PBXNativeTarget "LYJOCDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C57954871E67B0F70011CC45 /* Debug */,
+				C57954881E67B0F70011CC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C59265351E69226A003CA8B9 /* LYJOCDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C59265361E69226A003CA8B9 /* LYJOCDemo.xcdatamodel */,
+			);
+			currentVersion = C59265361E69226A003CA8B9 /* LYJOCDemo.xcdatamodel */;
+			path = LYJOCDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C57954481E67B0F70011CC45 /* Project object */;
+}

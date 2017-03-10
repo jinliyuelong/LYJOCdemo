@@ -1,0 +1,46 @@
+//
+//  LYJOCDemo-Prefix.pch
+//  LYJOCDemo
+//
+//  Created by Liyanjun on 2017/3/2.
+//  Copyright © 2017年 hand. All rights reserved.
+//
+
+#ifndef LYJOCDemo_Prefix_pch
+#define LYJOCDemo_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+#pragma mark -- 基本颜色
+#define SystemColor  UIColorFromRGB(0x3868a0) // 系统的蓝色
+#define SystemGray   UIColorFromRGB(0xe2e2e2) //系统的灰色
+#define mybackgroundColor  UIColorFromRGB(0xf4f5f7) //系统的背景色
+
+
+#define myBlackColr  UIColorFromRGB(0x424243) // 系统的蓝色
+#define mygrayColor  UIColorFromRGB(0xb2b2b2) // 系统的蓝色
+
+#define TitlelableColor  myBlackColr // 系统的蓝色
+
+
+#pragma mark -- 导入一些文件
+
+#import "UtilsMacro.h"
+#import "NSMutableDictionary+Extension.h"
+#import  "UIView+Extension.h"
+#import "UIViewController+Extension.h"
+#import "GlobalFunc.h"
+
+
+#pragma mark --定义一些数字
+
+#define commonCellHeight 43.0//常用tableCell的高度
+#define mylableSize 15 ////设置常用字体大小为16
+
+#define mycommonEdge 13 //lable的上下左右编剧
+
+
+#endif /* LYJOCDemo_Prefix_pch */
