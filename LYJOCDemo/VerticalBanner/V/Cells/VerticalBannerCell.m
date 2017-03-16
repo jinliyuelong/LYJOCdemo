@@ -60,7 +60,7 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
 
 
     if (!_verticalBannerView) {
-        _verticalBannerView = [[VerticalBannerView alloc] initWithFrame:CGRectMake(mycommonEdge, mycommonEdge, ScreenWidth - mycommonEdge*2 , 60)];
+        _verticalBannerView = [[VerticalBannerView alloc] initWithFrame:CGRectMake(mycommonEdge, mycommonEdge, ScreenWidth - mycommonEdge*2 , 23.33)];
         
         
 //        _verticalBannerView.backgroundColor = [UIColor redColor];
@@ -79,7 +79,7 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
         make.trailing.mas_equalTo(self.contentView).offset(-mycommonEdge);
         
         
-        make.height.mas_equalTo(@60);
+        make.height.mas_equalTo(23.33);
         
         make.bottom.mas_equalTo(self.contentView).offset(-mycommonEdge).priority(600);
         

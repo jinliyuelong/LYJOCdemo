@@ -20,14 +20,18 @@
 @end
 
 @implementation VerticalBannerView{
-
-  NSMutableArray  *dataSource;//数据来源
-  NSInteger       dataSourceCount;//来源个数
+    
+    NSMutableArray  *dataSource;//数据来源
+    NSInteger       dataSourceCount;//来源个数
     unsigned long   currentIndex;//当前页
     unsigned long   totalPage;//总的页数
     NSMutableArray  *muArrViews;//多个view
     
     NSInteger  currentPage;//当前页
+    
+    CGFloat  selfHeight;//
+    
+    CGFloat  selfWidth;//
 }
 
 
@@ -67,7 +71,9 @@
 
 - (void)initialization
 {
-  
+    
+    
+    self.backgroundColor = [UIColor redColor];
     
 }
 
@@ -77,7 +83,7 @@
 #pragma mark  - setUi
 
 - (void)setupUi{
-
+    
 }
 
 #pragma mark -  加载数据
@@ -87,15 +93,15 @@
 #pragma mark  BannerContentViewDelegate
 
 - (void)didSelectedWithView:(UIView *)view pointFromWindow:(CGPoint)point row:(NSInteger)row{
-        //初始化时间
-        [self initTime];
-        
-        NSInteger index = row%dataSourceCount;
-        if ([self.scrolDelegate respondsToSelector:@selector(verticalBannerView:didSelectedImgWithRow:)]) {
-            [self.scrolDelegate verticalBannerView:self didSelectedImgWithRow:index];
-        } else {
-            NSLog(@"滚动视图的代理没有响应，过来看看吧");
-        }
+    //初始化时间
+    [self initTime];
+    
+    NSInteger index = row%dataSourceCount;
+    if ([self.scrolDelegate respondsToSelector:@selector(verticalBannerView:didSelectedImgWithRow:)]) {
+        [self.scrolDelegate verticalBannerView:self didSelectedImgWithRow:index];
+    } else {
+        NSLog(@"滚动视图的代理没有响应，过来看看吧");
+    }
 }
 #pragma mark  - 实例方法
 
@@ -131,11 +137,17 @@
     NSInteger endX = 100/dataSourceCount*dataSourceCount+currentIndex%dataSourceCount;//到指定数量(pageCount的整数倍+偏移量)的时候切换到中间偏移量
     if (currentIndex <= endX || currentIndex >= totalPage-endX) {
         currentIndex = totalPage/2;
+        
+        NSLog(@"当前1是%lu,endX=%lu,totalPage=%lu",currentIndex,endX,totalPage);
+        
         [self loadImgWithIndex:currentIndex];
-        [_scrolDefault setContentOffset:CGPointMake(0, self.frame.size.height*currentIndex) animated:NO];
+        [_scrolDefault setContentOffset:CGPointMake(0, selfHeight*currentIndex) animated:NO];
         [self changeImgWithIndex:currentIndex];
     } else {
-        [_scrolDefault setContentOffset:CGPointMake(0, self.frame.size.height*currentIndex) animated:YES];
+        
+        NSLog(@"当前2是%lu,endX=%lu,totalPage=%lu selfheight= %f",currentIndex,endX,totalPage,selfHeight);
+        
+        [_scrolDefault setContentOffset:CGPointMake(0,selfHeight*currentIndex) animated:YES];
         [self changeImgWithIndex:currentIndex];
     }
     
@@ -147,7 +159,7 @@
     if (source.count == 0) {
         return;
     }
-  
+    
     [self invalidateTimer];
     
     dataSource = [NSMutableArray arrayWithArray:source];
@@ -176,23 +188,41 @@
     }
     
     @autoreleasepool {
+        
+        CGFloat width = self.frame.size.width;
+        
+        CGFloat height = self.frame.size.height;
+        
+        selfHeight = height;
+        
+        selfWidth = width;
+        
         [_scrolDefault removeFromSuperview];
-        _scrolDefault = [[UIScrollView alloc] initWithFrame:self.frame];
+        _scrolDefault = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        
+        
         _scrolDefault.backgroundColor = [UIColor whiteColor];
         _scrolDefault.showsHorizontalScrollIndicator = NO;
         _scrolDefault.pagingEnabled = YES;
         _scrolDefault.delegate = self;
         [self addSubview:_scrolDefault];
-        
-        CGFloat width = self.frame.size.width;
-        CGFloat height = self.frame.size.height;
+        //
         
         
-       
+        
         
         BannerContentView *uiviewDefalut = [self addview:CGRectMake(0, 0, width, height) url:[dataSource firstObject] tag:0 ];
+        
+        
+        
+        
+        
         [_scrolDefault addSubview:uiviewDefalut];
-        uiviewDefalut = nil;
+        
+        
+        
+        
+        
         
         self.clipsToBounds = YES;
     }
@@ -205,15 +235,19 @@
     
     view.backgroundColor = [GlobalFunc  randomColor];
     
+    
     view.index = tag;
+    
     view.bannerContentViewDelegate = self;
-  
+    
     view.userInteractionEnabled = YES;
     
-//    if (full) {
-//        imgViewDefault.contentMode = UIViewContentModeScaleAspectFit;
-//    }
-
+    view.contentLable.text = url;
+    
+    //    if (full) {
+    //        imgViewDefault.contentMode = UIViewContentModeScaleAspectFit;
+    //    }
+    
     
     [self.scrolDefault addSubview:view];
     
@@ -225,9 +259,18 @@
 {
     muArrViews = [NSMutableArray array];
     @autoreleasepool {
+        
+        CGFloat width = self.frame.size.width;
+        CGFloat height = self.frame.size.height;
+        
+        
+        selfHeight = height;
+        
+        selfWidth = width;
+        
         [_scrolDefault removeFromSuperview];
-        _scrolDefault = [[UIScrollView alloc] initWithFrame:self.frame];
-        _scrolDefault.backgroundColor = [UIColor whiteColor];
+        _scrolDefault = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        _scrolDefault.backgroundColor = [UIColor blueColor];
         _scrolDefault.showsHorizontalScrollIndicator = NO;
         
         
@@ -235,8 +278,6 @@
         _scrolDefault.delegate = self;
         [self addSubview:_scrolDefault];
         
-        CGFloat width = self.frame.size.width;
-        CGFloat height = self.frame.size.height;
         
         if (![dataSource isKindOfClass:[NSArray class]] || dataSource.count == 0) {
             return ;
@@ -245,11 +286,10 @@
         totalPage = 100000/dataSource.count*dataSource.count;
         currentIndex = totalPage/2;
         for (int i = 0; i < dataSource.count; ++i) {
-           
+            
             BannerContentView *viewDefalut = [self addview:CGRectMake(0, (currentIndex+i)*height, width, height) url:[dataSource firstObject] tag:(currentIndex+i) ];
             
             [muArrViews addObject:viewDefalut];
-            viewDefalut = nil;
         }
         
         
@@ -264,7 +304,7 @@
 }
 
 
-#pragma make 重新加载current 
+#pragma make 重新加载current
 - (void)loadImgWithIndex:(NSInteger)index
 {
     if (muArrViews.count == 0) {
@@ -281,12 +321,12 @@
     
     NSInteger indexTemp = index%muArrViews.count;
     NSString *imgUrl = dataSource[indexTemp];
-   
+    
     
     
     imgViewDefault.contentLable.text = imgUrl;
     
-    imgViewDefault.frame = CGRectMake(0, self.frame.size.height*index, self.frame.size.width, self.frame.size.height);
+    imgViewDefault.frame = CGRectMake(0, selfHeight*index, selfWidth, selfHeight);
 }
 
 
@@ -320,14 +360,14 @@
     //跟踪滚动视图页面
     CGFloat pageHeight = scrollView.bounds.size.height;
     int scrollcurrentPage = (scrollView.contentOffset.y - pageHeight/2) / pageHeight + 1;
- 
+    
     if (scrollcurrentPage != currentPage) {
         [self changeImgWithIndex:scrollcurrentPage];
     }
     
     
     currentPage =  currentPage%dataSourceCount;
-
+    
     
 }
 
