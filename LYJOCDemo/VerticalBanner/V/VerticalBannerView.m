@@ -3,7 +3,7 @@
 //  LYJOCDemo
 //
 //  Created by Liyanjun on 2017/3/10.
-//  Copyright © 2017年 hand. All rights reserved.
+//  Copyright © 2017年 Liyanjun. All rights reserved.
 //
 
 #import "VerticalBannerView.h"
@@ -138,14 +138,14 @@
     if (currentIndex <= endX || currentIndex >= totalPage-endX) {
         currentIndex = totalPage/2;
         
-        NSLog(@"当前1是%lu,endX=%lu,totalPage=%lu",currentIndex,endX,totalPage);
+//        NSLog(@"当前1是%lu,endX=%lu,totalPage=%lu",currentIndex,endX,totalPage);
         
         [self loadImgWithIndex:currentIndex];
         [_scrolDefault setContentOffset:CGPointMake(0, selfHeight*currentIndex) animated:NO];
         [self changeImgWithIndex:currentIndex];
     } else {
         
-        NSLog(@"当前2是%lu,endX=%lu,totalPage=%lu selfheight= %f",currentIndex,endX,totalPage,selfHeight);
+//        NSLog(@"当前2是%lu,endX=%lu,totalPage=%lu selfheight= %f",currentIndex,endX,totalPage,selfHeight);
         
         [_scrolDefault setContentOffset:CGPointMake(0,selfHeight*currentIndex) animated:YES];
         [self changeImgWithIndex:currentIndex];
@@ -234,6 +234,8 @@
     BannerContentView *view = [[BannerContentView alloc] initWithFrame:frame];
     
     view.backgroundColor = [GlobalFunc  randomColor];
+    
+    
     
     
     view.index = tag;

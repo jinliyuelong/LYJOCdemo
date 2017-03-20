@@ -3,7 +3,7 @@
 //  LYJOCDemo
 //
 //  Created by Liyanjun on 2017/3/10.
-//  Copyright © 2017年 hand. All rights reserved.
+//  Copyright © 2017年 Liyanjun. All rights reserved.
 //
 
 #import "VerticalBannerViewController.h"
@@ -37,6 +37,7 @@
         _tableView = [[UITableView alloc] init];
         
         
+       
         
         _tableView.dataSource = self ;
         

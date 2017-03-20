@@ -3,11 +3,14 @@
 //  LYJOCDemo
 //
 //  Created by Liyanjun on 2017/3/2.
-//  Copyright © 2017年 hand. All rights reserved.
+//  Copyright © 2017年 Liyanjun. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
+#import "iflyMSC/iflyMSC.h"
+
+#define APPID_VALUE           @"58cf37c5"
 
 @interface AppDelegate ()
 
@@ -46,11 +49,28 @@
     }
     
     
+    [self onBaseContextWillStartupWithOptions:launchOptions]; //程序启动，还没有加载 RootViewController。
+    
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
     
     return YES;
 }
+
+
+//加载一些配置文件
+- (void)onBaseContextWillStartupWithOptions:(NSDictionary *)launchOptions{
+
+    //创建语音配置,appid必须要传入，仅执行一次则可
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",APPID_VALUE];
+    
+    //所有服务启动前，需要确保执行createUtility
+    [IFlySpeechUtility createUtility:initString];
+    
+    
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

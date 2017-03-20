@@ -3,7 +3,7 @@
 //  LYJOCDemo
 //
 //  Created by Liyanjun on 2017/3/2.
-//  Copyright © 2017年 hand. All rights reserved.
+//  Copyright © 2017年 Liyanjun. All rights reserved.
 //
 
 #ifndef LYJOCDemo_Prefix_pch
@@ -33,6 +33,13 @@
 #import  "UIView+Extension.h"
 #import "UIViewController+Extension.h"
 #import "GlobalFunc.h"
+#import "UIView+AutoLayout.h"
+#import "UIView+AutoLayout_960.h"
+#import "UIView+AutoLayout_1080.h"
+#import "NSString+Common.h"
+
+
+
 
 
 #pragma mark --定义一些数字

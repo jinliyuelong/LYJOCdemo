@@ -3,13 +3,14 @@
 //  LYJOCDemo
 //
 //  Created by Liyanjun on 2017/3/2.
-//  Copyright © 2017年 hand. All rights reserved.
+//  Copyright © 2017年 Liyanjun. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "ViewTableViewCell.h"
 #import "TestCocoDataCtl.h"
 #import "VerticalBannerViewController.h"
+#import "KeDaXunFeiViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,8 +44,8 @@
 
     if (!_controllers) {
         _controllers = @[[[TestCocoDataCtl alloc] initWithTitle:@"Cocodata"],
-                         [[VerticalBannerViewController alloc] initWithTitle:@"垂直轮播"]
-                         
+                         [[VerticalBannerViewController alloc] initWithTitle:@"垂直轮播"],
+                          [[KeDaXunFeiViewController alloc] initWithTitle:@"科大讯飞语音搜索"],
                          
                          
                          ];;
