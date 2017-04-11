@@ -50,4 +50,11 @@
 #define mycommonEdge 13 //lable的上下左右编剧
 
 
+
+#define mylableSize_1080 42 ////设置常用字体大小为16
+
+#define mycommonEdge_1080 30 //lable的上下左右编剧
+
+
+
 #endif /* LYJOCDemo_Prefix_pch */

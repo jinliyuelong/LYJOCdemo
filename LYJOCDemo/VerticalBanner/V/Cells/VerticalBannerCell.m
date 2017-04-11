@@ -101,6 +101,24 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
     
     [self.verticalBannerView reloadData:@[@"第一行",@"第二行",@"第三行",@"第4行",@"第5行",@"第6行"]];
     
+    [self setContenViewF];
+}
+
+
+- (void)setContenViewF{
+    
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self);
+        
+        make.leading.mas_equalTo(self.mas_leading).offset(0);
+        
+        make.trailing.mas_equalTo(self.mas_trailing).offset(0);
+        
+        make.bottom.mas_equalTo(self);
+        
+        
+    }];
     
 }
 

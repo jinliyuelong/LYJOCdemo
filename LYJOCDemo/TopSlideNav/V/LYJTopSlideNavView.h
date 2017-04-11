@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LYJTopSlideModel.h"
 
 @interface LYJTopSlideNavView : UIView
 
+
+
+
+
+- (void)dataBind:(NSMutableArray<LYJTopSlideModel*> *)dataSource;
 @end

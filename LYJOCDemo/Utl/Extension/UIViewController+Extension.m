@@ -17,7 +17,7 @@
 -(instancetype)initWithTitle:(NSString*)title{
     
     if (self=[super init]) {
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor =SystemGray;
         self.title=title;
     }
     return  self;

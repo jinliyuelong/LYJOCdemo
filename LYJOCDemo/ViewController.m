@@ -11,6 +11,7 @@
 #import "TestCocoDataCtl.h"
 #import "VerticalBannerViewController.h"
 #import "KeDaXunFeiViewController.h"
+#import "TopSlideNavViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -46,6 +47,9 @@
         _controllers = @[[[TestCocoDataCtl alloc] initWithTitle:@"Cocodata"],
                          [[VerticalBannerViewController alloc] initWithTitle:@"垂直轮播"],
                           [[KeDaXunFeiViewController alloc] initWithTitle:@"科大讯飞语音搜索"],
+                         [[TopSlideNavViewController alloc] initWithTitle:@"LYJTopSlideNav"]
+                         
+                         
                          
                          
                          ];;
@@ -162,8 +166,9 @@
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *viewController = self.controllers[indexPath.row];
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *viewController = self.controllers[indexPath.row];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

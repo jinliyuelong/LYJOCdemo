@@ -53,22 +53,28 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
     
     [self addTitle];
     
-    [self setContenF];
+    [self setContenViewF];
     
 }
 
 
-- (void) setContenF{
-
+- (void)setContenViewF{
+    
+    
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.titleLabel.mas_bottom).offset(mycommonEdge);
-        make.leading.equalTo(self);
-        make.top.equalTo(self);
-        make.trailing.equalTo(self);
-
+        make.top.mas_equalTo(self);
+        
+        make.leading.mas_equalTo(self.mas_leading).offset(0);
+        
+        make.trailing.mas_equalTo(self.mas_trailing).offset(0);
+        
+        make.bottom.mas_equalTo(self);
+        
+        
     }];
-
+    
 }
+
 #pragma mark 懒加载title
 
 - (UILabel*) titleLabel{
@@ -117,7 +123,7 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
         
         make.trailing.equalTo(self.contentView.mas_trailing).offset(-mycommonEdge);
         
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-mycommonEdge);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-mycommonEdge).priority(600);
         
     }];
 }

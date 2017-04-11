@@ -16,6 +16,7 @@
 		C5167B341E727CDF00224AAF /* BannerContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B331E727CDF00224AAF /* BannerContentView.m */; };
 		C524B7F41E7A91970061B821 /* ViedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C524B7F31E7A91970061B821 /* ViedioViewController.m */; };
 		C524B7F91E7A91F50061B821 /* ViedioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C524B7F81E7A91F50061B821 /* ViedioTableViewCell.m */; };
+		C53D84981E7FDBD600BE5781 /* LYJTopSlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D84971E7FDBD600BE5781 /* LYJTopSlideModel.m */; };
 		C57954551E67B0F70011CC45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954541E67B0F70011CC45 /* main.m */; };
 		C57954581E67B0F70011CC45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954571E67B0F70011CC45 /* AppDelegate.m */; };
 		C579545B1E67B0F70011CC45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C579545A1E67B0F70011CC45 /* ViewController.m */; };
@@ -103,6 +104,8 @@
 		C524B7F31E7A91970061B821 /* ViedioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViedioViewController.m; sourceTree = "<group>"; };
 		C524B7F71E7A91F50061B821 /* ViedioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViedioTableViewCell.h; sourceTree = "<group>"; };
 		C524B7F81E7A91F50061B821 /* ViedioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViedioTableViewCell.m; sourceTree = "<group>"; };
+		C53D84961E7FDBD600BE5781 /* LYJTopSlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYJTopSlideModel.h; sourceTree = "<group>"; };
+		C53D84971E7FDBD600BE5781 /* LYJTopSlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYJTopSlideModel.m; sourceTree = "<group>"; };
 		C57954501E67B0F70011CC45 /* LYJOCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYJOCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57954541E67B0F70011CC45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C57954561E67B0F70011CC45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -605,6 +608,8 @@
 				C5E0B8B31E7BDA34000F4289 /* Cells */,
 				C5E0B8B41E7BDA45000F4289 /* LYJTopSlideNavView.h */,
 				C5E0B8B51E7BDA45000F4289 /* LYJTopSlideNavView.m */,
+				C53D84961E7FDBD600BE5781 /* LYJTopSlideModel.h */,
+				C53D84971E7FDBD600BE5781 /* LYJTopSlideModel.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -831,6 +836,7 @@
 				C524B7F91E7A91F50061B821 /* ViedioTableViewCell.m in Sources */,
 				C57954581E67B0F70011CC45 /* AppDelegate.m in Sources */,
 				C5E0B8A61E7B8ED6000F4289 /* NSData+AES256.m in Sources */,
+				C53D84981E7FDBD600BE5781 /* LYJTopSlideModel.m in Sources */,
 				C5167B311E7276ED00224AAF /* Reachability.m in Sources */,
 				C59265011E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m in Sources */,
 				C5D9B64F1E7F78C300ED257F /* KeDaXunFeiViewController.m in Sources */,

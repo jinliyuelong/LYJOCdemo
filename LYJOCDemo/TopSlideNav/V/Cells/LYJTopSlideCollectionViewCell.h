@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LYJTopSlideModel.h"
+
+#define LYJTopSlideSelectColor    [UIColor redColor]//这里定义选中字体的颜色
 
 @interface LYJTopSlideCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong)UILabel *contentLable;//显示的lable
+
+
+
+- (void)dataBind:(LYJTopSlideModel*)model;
+
++ (NSString *)registerCellID;
 @end
