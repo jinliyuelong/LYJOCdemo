@@ -31,6 +31,8 @@
     
     CGFloat  selfHeight;//
     
+    NSInteger orginSourceCount;//有多少条
+    
     CGFloat  selfWidth;//
 }
 
@@ -98,6 +100,11 @@
     
     NSInteger index = row%dataSourceCount;
     if ([self.scrolDelegate respondsToSelector:@selector(verticalBannerView:didSelectedImgWithRow:)]) {
+        
+        if (orginSourceCount == 2) {
+            index = index%2;
+        }
+        
         [self.scrolDelegate verticalBannerView:self didSelectedImgWithRow:index];
     } else {
         NSLog(@"滚动视图的代理没有响应，过来看看吧");
@@ -161,7 +168,7 @@
     }
     
     [self invalidateTimer];
-    
+     orginSourceCount = source.count;
     if (source.count==2) {
         NSMutableArray* copySource = [NSMutableArray arrayWithArray:source];
         
