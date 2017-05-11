@@ -12,6 +12,7 @@
 #import "VerticalBannerViewController.h"
 #import "KeDaXunFeiViewController.h"
 #import "TopSlideNavViewController.h"
+#import "AVViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -47,8 +48,8 @@
         _controllers = @[[[TestCocoDataCtl alloc] initWithTitle:@"Cocodata"],
                          [[VerticalBannerViewController alloc] initWithTitle:@"垂直轮播"],
                           [[KeDaXunFeiViewController alloc] initWithTitle:@"科大讯飞语音搜索"],
-                         [[TopSlideNavViewController alloc] initWithTitle:@"LYJTopSlideNav"]
-                         
+                         [[TopSlideNavViewController alloc] initWithTitle:@"LYJTopSlideNav"],
+                         [[AVViewController alloc] initWithTitle:@"AVPLAYER"],
                          
                          
                          

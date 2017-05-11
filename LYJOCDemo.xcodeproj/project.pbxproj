@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B1E3C9D342386DB16689262 /* libPods-LYJOCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB79B3363FB641A0E594CB5 /* libPods-LYJOCDemo.a */; };
+		C50409911E9C84EC003054F3 /* AVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50409901E9C84EC003054F3 /* AVViewController.m */; };
+		C50409941E9C8526003054F3 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50409931E9C8526003054F3 /* VideoView.m */; };
 		C5167B241E723FAA00224AAF /* VerticalBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B231E723FAA00224AAF /* VerticalBannerViewController.m */; };
 		C5167B281E7249EC00224AAF /* VerticalBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B271E7249EC00224AAF /* VerticalBannerCell.m */; };
 		C5167B2B1E724B3200224AAF /* VerticalBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5167B2A1E724B3200224AAF /* VerticalBannerView.m */; };
@@ -88,6 +90,10 @@
 		1C31723FE0D7BB82475C6529 /* Pods-LYJOCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYJOCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3CB79B3363FB641A0E594CB5 /* libPods-LYJOCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYJOCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA0B9CB1969CB3F4831100F /* Pods-LYJOCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYJOCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYJOCDemo/Pods-LYJOCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C504098F1E9C84EC003054F3 /* AVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVViewController.h; sourceTree = "<group>"; };
+		C50409901E9C84EC003054F3 /* AVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVViewController.m; sourceTree = "<group>"; };
+		C50409921E9C8526003054F3 /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
+		C50409931E9C8526003054F3 /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
 		C5167B221E723FAA00224AAF /* VerticalBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalBannerViewController.h; sourceTree = "<group>"; };
 		C5167B231E723FAA00224AAF /* VerticalBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalBannerViewController.m; sourceTree = "<group>"; };
 		C5167B261E7249EC00224AAF /* VerticalBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalBannerCell.h; sourceTree = "<group>"; };
@@ -251,6 +257,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C504098B1E9C84D6003054F3 /* OtherAVplayer */ = {
+			isa = PBXGroup;
+			children = (
+				C504098C1E9C84D6003054F3 /* C */,
+				C504098D1E9C84D6003054F3 /* M */,
+				C504098E1E9C84D6003054F3 /* V */,
+			);
+			path = OtherAVplayer;
+			sourceTree = "<group>";
+		};
+		C504098C1E9C84D6003054F3 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C504098F1E9C84EC003054F3 /* AVViewController.h */,
+				C50409901E9C84EC003054F3 /* AVViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C504098D1E9C84D6003054F3 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C504098E1E9C84D6003054F3 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C50409921E9C8526003054F3 /* VideoView.h */,
+				C50409931E9C8526003054F3 /* VideoView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		C5167B1E1E723F9700224AAF /* VerticalBanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +342,7 @@
 		C524B7EB1E7A912A0061B821 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				C504098B1E9C84D6003054F3 /* OtherAVplayer */,
 				C524B7EC1E7A912A0061B821 /* C */,
 				C524B7ED1E7A912A0061B821 /* M */,
 				C524B7EE1E7A912A0061B821 /* V */,
@@ -840,9 +882,11 @@
 				C5167B311E7276ED00224AAF /* Reachability.m in Sources */,
 				C59265011E67CBC1003CA8B9 /* NSMutableDictionary+Extension.m in Sources */,
 				C5D9B64F1E7F78C300ED257F /* KeDaXunFeiViewController.m in Sources */,
+				C50409911E9C84EC003054F3 /* AVViewController.m in Sources */,
 				C592653D1E6922AE003CA8B9 /* Person+CoreDataProperties.m in Sources */,
 				C5167B2E1E72764000224AAF /* GlobalFunc.m in Sources */,
 				C59265131E67D1F7003CA8B9 /* UIView+Extension.m in Sources */,
+				C50409941E9C8526003054F3 /* VideoView.m in Sources */,
 				C5167B281E7249EC00224AAF /* VerticalBannerCell.m in Sources */,
 				C5E0B8AA1E7B8ED6000F4289 /* UIView+AutoLayout_1080.m in Sources */,
 				C5167B341E727CDF00224AAF /* BannerContentView.m in Sources */,

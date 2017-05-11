@@ -58,12 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LYJOCDemo/VerticalBanner/V/VerticalBannerView.m"
-            timestampString = "511177919.586022"
+            timestampString = "516187101.224452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "-reloadViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LYJOCDemo/TopSlideNav/V/Cells/LYJTopSlideCollectionViewCell.m"
+            timestampString = "514365329.957354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-setupUi"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

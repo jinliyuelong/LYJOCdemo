@@ -99,7 +99,7 @@ static NSString* const ViewTableViewCellId=@"ViewTableViewCellId";
     
     [self verticalBannerViewF];
     
-    [self.verticalBannerView reloadData:@[@"第一行",@"第二行",@"第三行",@"第4行",@"第5行",@"第6行"]];
+    [self.verticalBannerView reloadData:@[@"第一行",@"第二行"]];
     
     [self setContenViewF];
 }

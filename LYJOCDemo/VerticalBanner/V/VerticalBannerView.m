@@ -162,8 +162,17 @@
     
     [self invalidateTimer];
     
+    if (source.count==2) {
+        NSMutableArray* copySource = [NSMutableArray arrayWithArray:source];
+        
+        [copySource addObjectsFromArray:source];
+        dataSource = [NSMutableArray arrayWithArray:copySource];
+        dataSourceCount = copySource.count;
+    }else{
+    
     dataSource = [NSMutableArray arrayWithArray:source];
     dataSourceCount = source.count;
+    }
     
     if (source.count == 1) { //只有一张  不动
         [self reloadOnlyView];
@@ -363,13 +372,9 @@
     CGFloat pageHeight = scrollView.bounds.size.height;
     int scrollcurrentPage = (scrollView.contentOffset.y - pageHeight/2) / pageHeight + 1;
     
-    if (scrollcurrentPage != currentPage) {
-        [self changeImgWithIndex:scrollcurrentPage];
-    }
-    
-    
-    currentPage =  currentPage%dataSourceCount;
-    
+   
+    [self changeImgWithIndex:scrollcurrentPage];
+   
     
 }
 
