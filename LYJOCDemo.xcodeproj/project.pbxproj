@@ -19,6 +19,10 @@
 		C524B7F41E7A91970061B821 /* ViedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C524B7F31E7A91970061B821 /* ViedioViewController.m */; };
 		C524B7F91E7A91F50061B821 /* ViedioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C524B7F81E7A91F50061B821 /* ViedioTableViewCell.m */; };
 		C53D84981E7FDBD600BE5781 /* LYJTopSlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D84971E7FDBD600BE5781 /* LYJTopSlideModel.m */; };
+		C548C5F01EFA677300DD405B /* RSAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C548C5EF1EFA677300DD405B /* RSAViewController.m */; };
+		C548C5F61EFBC10F00DD405B /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C548C5F41EFBC10F00DD405B /* private_key.p12 */; };
+		C548C5F71EFBC10F00DD405B /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = C548C5F51EFBC10F00DD405B /* public_key.der */; };
+		C548C5FA1EFBC18300DD405B /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C548C5F91EFBC18300DD405B /* RSAEncryptor.m */; };
 		C57954551E67B0F70011CC45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954541E67B0F70011CC45 /* main.m */; };
 		C57954581E67B0F70011CC45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C57954571E67B0F70011CC45 /* AppDelegate.m */; };
 		C579545B1E67B0F70011CC45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C579545A1E67B0F70011CC45 /* ViewController.m */; };
@@ -112,6 +116,12 @@
 		C524B7F81E7A91F50061B821 /* ViedioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViedioTableViewCell.m; sourceTree = "<group>"; };
 		C53D84961E7FDBD600BE5781 /* LYJTopSlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYJTopSlideModel.h; sourceTree = "<group>"; };
 		C53D84971E7FDBD600BE5781 /* LYJTopSlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYJTopSlideModel.m; sourceTree = "<group>"; };
+		C548C5EE1EFA677300DD405B /* RSAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAViewController.h; sourceTree = "<group>"; };
+		C548C5EF1EFA677300DD405B /* RSAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAViewController.m; sourceTree = "<group>"; };
+		C548C5F41EFBC10F00DD405B /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
+		C548C5F51EFBC10F00DD405B /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
+		C548C5F81EFBC18300DD405B /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		C548C5F91EFBC18300DD405B /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
 		C57954501E67B0F70011CC45 /* LYJOCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYJOCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57954541E67B0F70011CC45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C57954561E67B0F70011CC45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -393,6 +403,51 @@
 			path = VIews;
 			sourceTree = "<group>";
 		};
+		C548C5EA1EFA674E00DD405B /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				C548C5F31EFBC10F00DD405B /* rsaFiles */,
+				C548C5EB1EFA674E00DD405B /* C */,
+				C548C5EC1EFA674E00DD405B /* M */,
+				C548C5ED1EFA674E00DD405B /* V */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
+		C548C5EB1EFA674E00DD405B /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C548C5EE1EFA677300DD405B /* RSAViewController.h */,
+				C548C5EF1EFA677300DD405B /* RSAViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C548C5EC1EFA674E00DD405B /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C548C5ED1EFA674E00DD405B /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C548C5F31EFBC10F00DD405B /* rsaFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C548C5F81EFBC18300DD405B /* RSAEncryptor.h */,
+				C548C5F91EFBC18300DD405B /* RSAEncryptor.m */,
+				C548C5F41EFBC10F00DD405B /* private_key.p12 */,
+				C548C5F51EFBC10F00DD405B /* public_key.der */,
+			);
+			path = rsaFiles;
+			sourceTree = "<group>";
+		};
 		C57954471E67B0F70011CC45 = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +609,7 @@
 		C5D9B6491E7F787800ED257F /* KeDaXunFei */ = {
 			isa = PBXGroup;
 			children = (
+				C548C5EA1EFA674E00DD405B /* RSA */,
 				C5D9B6771E7FB08400ED257F /* LCVoice */,
 				C5D9B66A1E7FADBA00ED257F /* isr */,
 				C5D9B64A1E7F787800ED257F /* C */,
@@ -789,7 +845,9 @@
 				C5D9B6831E7FB08400ED257F /* wave70x117@2x.png in Resources */,
 				C57954661E67B0F70011CC45 /* LaunchScreen.storyboard in Resources */,
 				C5D9B6821E7FB08400ED257F /* mic_talk_358x358@2x.png in Resources */,
+				C548C5F61EFBC10F00DD405B /* private_key.p12 in Resources */,
 				C57954631E67B0F70011CC45 /* Assets.xcassets in Resources */,
+				C548C5F71EFBC10F00DD405B /* public_key.der in Resources */,
 				C5D9B6811E7FB08400ED257F /* mic_normal_358x358@2x.png in Resources */,
 				C5D9B6801E7FB08400ED257F /* black_bg_ip5@2x.png in Resources */,
 				C579545E1E67B0F70011CC45 /* Main.storyboard in Resources */,
@@ -868,6 +926,7 @@
 				C5167B241E723FAA00224AAF /* VerticalBannerViewController.m in Sources */,
 				C5D9B67F1E7FB08400ED257F /* LCVoiceHud.m in Sources */,
 				C5E0B8981E7B8627000F4289 /* ViedioView.m in Sources */,
+				C548C5F01EFA677300DD405B /* RSAViewController.m in Sources */,
 				C59265101E67D1B1003CA8B9 /* UIViewController+Extension.m in Sources */,
 				C579545B1E67B0F70011CC45 /* ViewController.m in Sources */,
 				C5E0B8A81E7B8ED6000F4289 /* NSString+Common.m in Sources */,
@@ -889,6 +948,7 @@
 				C50409941E9C8526003054F3 /* VideoView.m in Sources */,
 				C5167B281E7249EC00224AAF /* VerticalBannerCell.m in Sources */,
 				C5E0B8AA1E7B8ED6000F4289 /* UIView+AutoLayout_1080.m in Sources */,
+				C548C5FA1EFBC18300DD405B /* RSAEncryptor.m in Sources */,
 				C5167B341E727CDF00224AAF /* BannerContentView.m in Sources */,
 				C57954551E67B0F70011CC45 /* main.m in Sources */,
 				C5167B2B1E724B3200224AAF /* VerticalBannerView.m in Sources */,

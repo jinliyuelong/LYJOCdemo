@@ -13,6 +13,7 @@
 #import "KeDaXunFeiViewController.h"
 #import "TopSlideNavViewController.h"
 #import "AVViewController.h"
+#import "RSAViewController.h"//加密
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -51,6 +52,7 @@
                          [[TopSlideNavViewController alloc] initWithTitle:@"LYJTopSlideNav"],
                          [[AVViewController alloc] initWithTitle:@"AVPLAYER"],
                          
+                         [[RSAViewController alloc] initWithTitle:@"RSA"],
                          
                          
                          ];;

@@ -8,11 +8,14 @@
 
 #define PROGRAMNAME @"ATL"
 
+
 #ifdef DEBUG
-#define DLog(fmt, ...) //NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__);
+#define NSLog(...) NSLog(__VA_ARGS__)
 #else
-#define DLog(...)
+#define NSLog(...)
 #endif
+
+
 
 
 #if __IPHONE_6_0 // iOS6 and later
