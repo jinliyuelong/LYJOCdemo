@@ -7,6 +7,7 @@ target ‘LYJOCDemo’ do
   pod 'Masonry’
   pod 'IQKeyboardManager' 
   pod "AFNetworking"
+   pod 'FMDB', '~> 2.6.2'
 
 
 end

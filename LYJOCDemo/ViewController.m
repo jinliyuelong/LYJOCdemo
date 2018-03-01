@@ -14,6 +14,8 @@
 #import "TopSlideNavViewController.h"
 #import "AVViewController.h"
 #import "RSAViewController.h"//加密
+#import "AnimationFirstViewController.h"//动画第一个
+#import "DemoViewController.h"//fmdb
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -53,6 +55,9 @@
                          [[AVViewController alloc] initWithTitle:@"AVPLAYER"],
                          
                          [[RSAViewController alloc] initWithTitle:@"RSA"],
+                         [[AnimationFirstViewController alloc] initWithTitle:@"第一个动画"],
+                         [[DemoViewController alloc] initWithTitle:@"FMDBDEMO"]
+                         
                          
                          
                          ];;

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "TSStorageManager.h"
+#import "ViewController.h"
+#import "BaseUINavigationController.h"
 
 #import "iflyMSC/iflyMSC.h"
 
@@ -52,6 +55,10 @@
     [self onBaseContextWillStartupWithOptions:launchOptions]; //程序启动，还没有加载 RootViewController。
     
     
+      ViewController *indexCtrl = [[ViewController alloc] init];
+     BaseUINavigationController *nav = [[BaseUINavigationController alloc] initWithRootViewController:indexCtrl];
+     self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
     
     return YES;
@@ -61,6 +68,8 @@
 //加载一些配置文件
 - (void)onBaseContextWillStartupWithOptions:(NSDictionary *)launchOptions{
 
+     [[TSStorageManager sharedStorageManager] open];//初始化本地数据库
+    
     //创建语音配置,appid必须要传入，仅执行一次则可
     NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",APPID_VALUE];
     
