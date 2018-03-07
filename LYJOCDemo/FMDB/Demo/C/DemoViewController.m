@@ -127,7 +127,7 @@
 
         [self.dataSource addObject:@"创建表"];
         [self.dataSource addObject:@"创建索引"];
-       [self.dataSource addObject:@"创建表并创建索引，失败回滚"];
+        [self.dataSource addObject:@"创建表并创建索引，失败回滚"];
         [self.dataSource addObject:@"插入TestTable"];
         [self.dataSource addObject:@"查询TestTable"];
         [self.dataSource addObject:@"修改TestTable"];
@@ -165,18 +165,25 @@
     
 }
 
+//- (void)insetTable{
+//    self.fMDBDemo.text1 = @"测试";
+//    self.fMDBDemo.istrul = YES;
+//    self.fMDBDemo.number1 = 2;
+//    self.fMDBDemo.number2 = 2;
+//    [self.fMDBDemo insert];
+//}
+
 - (void)insetTable{
-    self.fMDBDemo.text1 = @"测试";
-    self.fMDBDemo.istrul = YES;
-    self.fMDBDemo.number1 = 2;
-    [self.fMDBDemo insert];
+    self.fMDBDemo2.test = @"测试";
+  
+    [self.fMDBDemo2 insert];
 }
 
 - (void)queryTable{
-  NSArray* arrya =  [self.fMDBDemo queryWithWhereStr:@"1=1" orderBy:nil];
+  NSArray* arrya =  [self.fMDBDemo2 queryWithWhereStr:@"1=1" orderBy:nil];
     
-    for (FMDBDemo* demo in arrya) {
-        NSLog(@"demo==%@",demo.text1);
+    for (FMDBDemo2* demo in arrya) {
+        NSLog(@"demo==%@,fmdbid=%@",demo.test,demo.fmdbid);
     }
 }
 

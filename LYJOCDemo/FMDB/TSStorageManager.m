@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 #import "SqlBuilder.h"
 #import "FMDatabaseAdditions.h" // 导入头文件
-
+#import "NSString+Contain.h"
 
 
 static TSStorageManager *sharedInstance = nil;
@@ -98,12 +98,12 @@ static TSStorageManager *sharedInstance = nil;
         }
         // create database if it does not exist
         
-        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-        CFShow((__bridge CFTypeRef)(infoDictionary));
+                NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        //        CFShow((__bridge CFTypeRef)(infoDictionary));
         // app名称
-        NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+                NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
         
-        NSString* daName = [NSString stringWithFormat:@"%@.db",app_Name];
+                NSString* daName = [NSString stringWithFormat:@"%@.db",app_Name];
         NSString* dbfile = [dbfolder stringByAppendingPathComponent:daName];
         
         self.db = [FMDatabase databaseWithPath:dbfile];
@@ -123,6 +123,9 @@ static TSStorageManager *sharedInstance = nil;
 
 -(BOOL) executeSQLUpdate:(NSString *) sqlStatement{
     
+    
+    NSLog(@"sqlStatement is %@ ",sqlStatement);
+    
     __block BOOL result = NO;
     
     [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
@@ -138,30 +141,30 @@ static TSStorageManager *sharedInstance = nil;
 
 -(BOOL)executeArraySqls:(NSArray*)sqls{
     __block BOOL result = NO;
-  
-        [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-            [db open];
-            
-            [db startSavePointWithName:@"tableError" error:nil];
-           
-            for (NSString* sql in sqls) {
-                result = [db executeUpdate:sql withParameterDictionary:nil];
-                if (!result) {
-                    break ;
-                }
-            }
+    
+    [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        [db open];
+        
+        [db startSavePointWithName:@"tableError" error:nil];
+        
+        for (NSString* sql in sqls) {
+            result = [db executeUpdate:sql withParameterDictionary:nil];
             if (!result) {
-                [db rollbackToSavePointWithName:@"tableError" error:nil];
+                break ;
             }
-            [db releaseSavePointWithName:@"tableError" error:nil];
-            _lastError = [db lastError];
-            [db close];
-        }];
+        }
+        if (!result) {
+            [db rollbackToSavePointWithName:@"tableError" error:nil];
+        }
+        [db releaseSavePointWithName:@"tableError" error:nil];
+        _lastError = [db lastError];
+        [db close];
+    }];
     
     return result;
 }
 -(BOOL) executeSQLUpdate:(NSString *) sqlStatement param:(NSDictionary *)arguments{
-    
+    NSLog(@"sqlStatement is %@ ,arguments == %@",sqlStatement,arguments);
     __block BOOL result = NO;
     
     [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
@@ -252,8 +255,18 @@ static TSStorageManager *sharedInstance = nil;
         
         while ((key = [enumerator nextObject])) {
             if (![self istableExistColum:tableInfo.getTableName colum:key]) {
-                NSString * alterSql = [SqlBuilder buildAlterTable:class column:key];
-                [self executeSQLUpdate:alterSql param:nil];
+                NSString * type =  [propertys valueForKey:key];
+                if([type myContainsString:@"NSNumber"] ||
+                   [type myContainsString:@"NSData"] ||
+                   [type myContainsString:@"TB"] ||
+                   [type myContainsString:@"Tq"] ||
+                   [type myContainsString:@"Tf"] ||
+                   [type myContainsString:@"Td"] ||
+                   [type myContainsString:@"NSString"]
+                   ){
+                    NSString * alterSql = [SqlBuilder buildAlterTable:class column:key];
+                    [self executeSQLUpdate:alterSql param:nil];
+                }
             }
             
         }
@@ -283,16 +296,14 @@ static TSStorageManager *sharedInstance = nil;
     TableInfo * tableInfo = info.tableInfo;
     
     
-    NSLog(@"saveSql is %@ ,arguments == %@",info.sql,info.arguments);
-    
     
     result = [self executeSQLUpdate:info.sql param:info.arguments];
-    
-    if(result && tableInfo.getPrimaryFieldName !=nil ){
-        NSNumber * lastId = [self getLastInsertRowid:tableInfo.getTableName];
-        
-        [entity setValue:lastId forKey:tableInfo.getPrimaryFieldName];
-    }
+    //
+    //    if(result && tableInfo.getPrimaryFieldName !=nil ){
+    //        NSNumber * lastId = [self getLastInsertRowid:tableInfo.getTableName];
+    //
+    //        [entity setValue:lastId forKey:tableInfo.getPrimaryFieldName];
+    //    }
     
     return result;
     
@@ -325,7 +336,6 @@ static TSStorageManager *sharedInstance = nil;
     updateSql =[info.sql stringByAppendingString:strWhere];
     
     
-    NSLog(@"updateSql is %@",updateSql);
     
     
     return  [self executeSQLUpdate:updateSql param:info.arguments];
@@ -458,8 +468,6 @@ static TSStorageManager *sharedInstance = nil;
     
     
     
-    NSLog(@"delSql is %@",delSql);
-    
     
     return [self executeSQLUpdate:delSql param:nil];
     
@@ -484,7 +492,6 @@ static TSStorageManager *sharedInstance = nil;
     
     [self checkTableExists:class];
     
-    NSLog(@"indexql is ====\n%@",indexSql);
     
     return  [self executeSQLUpdate:indexSql param:nil];
 }
@@ -530,3 +537,4 @@ static TSStorageManager *sharedInstance = nil;
 }
 
 @end
+

@@ -973,8 +973,8 @@
 				TargetAttributes = {
 					C579544F1E67B0F70011CC45 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XMRA9CS64A;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 79LE4P38G2;
+						ProvisioningStyle = Automatic;
 					};
 					C579546B1E67B0F70011CC45 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1304,8 +1304,10 @@
 			baseConfigurationReference = 1C31723FE0D7BB82475C6529 /* Pods-LYJOCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XMRA9CS64A;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79LE4P38G2;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LYJOCDemo/3rd",
@@ -1314,10 +1316,10 @@
 				INFOPLIST_FILE = LYJOCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liyanjun.LYJOCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = liyanjun.LYJOCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26806b0d-6b26-44bc-9a43-252882a0cb6f";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: com*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1326,8 +1328,10 @@
 			baseConfigurationReference = 3FA0B9CB1969CB3F4831100F /* Pods-LYJOCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XMRA9CS64A;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79LE4P38G2;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LYJOCDemo/3rd",
@@ -1336,10 +1340,10 @@
 				INFOPLIST_FILE = LYJOCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liyanjun.LYJOCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = liyanjun.LYJOCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26806b0d-6b26-44bc-9a43-252882a0cb6f";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: com*";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -9,6 +9,7 @@
 #import "SqlBuilder.h"
 #import <CoreData/CoreData.h>
 #import <objc/runtime.h>
+#import "NSObject+TSStorageManager.h"
 
 #import "NSString+Contain.h"
 
@@ -98,6 +99,8 @@
 {
     TableInfo * tableInf =  [TableInfo getTableInfo:class];
     
+    
+    
     NSString * creatSql = @"CREATE TABLE IF NOT EXISTS  ";
     creatSql = [creatSql stringByAppendingString:tableInf.getTableName];
     creatSql = [creatSql stringByAppendingString:@"("];
@@ -107,6 +110,9 @@
     
     NSEnumerator *enumerator = [propertys keyEnumerator];
     NSString * key;
+    
+    BOOL hasPramarkey;
+    hasPramarkey = NO;
     
     while ((key = [enumerator nextObject])) {
         
@@ -145,18 +151,37 @@
         }else if([type myContainsString:@"PrimaryKey"]){
             creatSql = [creatSql stringByAppendingString:key];
             
-            creatSql  =  [creatSql stringByAppendingString:@"   INTEGER PRIMARY KEY AUTOINCREMENT," ];
+            if ([key isEqualToString:tableInf.getPrimaryFieldName]) {
+                creatSql  =  [creatSql stringByAppendingString:@"   INTEGER PRIMARY KEY AUTOINCREMENT," ];
+                hasPramarkey = YES;
+            }else{
+                creatSql  =  [creatSql stringByAppendingString:@"   INTEGER  AUTOINCREMENT," ];
+            }
+            
             
         }else {
             
-            @throw [[NSException alloc] initWithName:@"FMordException" reason:@"unsupport Member type" userInfo:nil];
+            //            @throw [[NSException alloc] initWithName:@"FMordException" reason:@"unsupport Member type" userInfo:nil];
+            //不支持的话，则忽略不创建
             
+            continue;
+            
+        }
+        
+        if ([key isEqualToString:tableInf.getPrimaryFieldName]&&![type myContainsString:@"PrimaryKey"]) {
+            creatSql = [creatSql  substringToIndex:[creatSql length]-1];
+            creatSql  =  [creatSql stringByAppendingString:@"   PRIMARY KEY," ];
+            hasPramarkey = YES;
         }
         
         
         
     }
     
+    if (!hasPramarkey) {
+        creatSql = [creatSql stringByAppendingString:@"fmdbid"];
+        creatSql  =  [creatSql stringByAppendingString:@"   INTEGER PRIMARY KEY AUTOINCREMENT," ];
+    }
     
     creatSql = [creatSql  substringToIndex:[creatSql length]-1];
     
@@ -177,7 +202,7 @@
     
     alterSql = [alterSql stringByAppendingString:tableInf.getTableName];
     alterSql = [alterSql stringByAppendingString:@" ADD "];
-
+    
     NSMutableDictionary * propertys = tableInf.getPropertyMap;
     
     
@@ -221,14 +246,17 @@
                 
             }else {
                 
-                @throw [[NSException alloc] initWithName:@"FMordException" reason:@"unsupport Member type" userInfo:nil];
+                //                @throw [[NSException alloc] initWithName:@"FMordException" reason:@"unsupport Member type" userInfo:nil];
                 
+                //不支持的话，则忽略不创建
+                
+                continue;
             }
         }
         
     }
     
-
+    
     return  alterSql;
     
     
@@ -261,15 +289,27 @@
         
         NSString * type =  [propertys valueForKey:key];
         
-        id value  =  [entity valueForKey:key];
         
-        //对空进行处理
-        if(value != nil && ![type myContainsString:@"PrimaryKey"]){
-            insertSql = [insertSql stringByAppendingString:key];
-            insertSql = [insertSql stringByAppendingString:@","];
-            [sqlinfo.arguments setValue:value forKey:key];
+        if([type myContainsString:@"NSNumber"] ||
+           [type myContainsString:@"NSData"] ||
+           [type myContainsString:@"TB"] ||
+           [type myContainsString:@"Tq"] ||
+           [type myContainsString:@"Tf"] ||
+           [type myContainsString:@"Td"] ||
+           [type myContainsString:@"NSString"]
+           ){
+            id value  =  [entity valueForKey:key];
             
+            //对空进行处理
+            if(value != nil && ![type myContainsString:@"PrimaryKey"]){
+                insertSql = [insertSql stringByAppendingString:key];
+                insertSql = [insertSql stringByAppendingString:@","];
+                [sqlinfo.arguments setValue:value forKey:key];
+                
+            }
         }
+        
+        
     }
     
     insertSql = [insertSql  substringToIndex:[insertSql length]-1];
@@ -278,12 +318,23 @@
     
     [propertys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         NSString * type =  [propertys valueForKey:key];
-        id value  =  [entity valueForKey:key];
-        
-        if(value !=nil &&![type myContainsString:@"PrimaryKey"]){
-            insertSql = [insertSql stringByAppendingString:@":"];
-            insertSql = [insertSql stringByAppendingString:key];
-            insertSql = [insertSql stringByAppendingString:@","];
+        if([type myContainsString:@"NSNumber"] ||
+           [type myContainsString:@"NSData"] ||
+           [type myContainsString:@"TB"] ||
+           [type myContainsString:@"Tq"] ||
+           [type myContainsString:@"Tf"] ||
+           [type myContainsString:@"Td"] ||
+           [type myContainsString:@"NSString"]
+           ){
+            id value  =  [entity valueForKey:key];
+            
+            if(value !=nil &&![type myContainsString:@"PrimaryKey"]){
+                //                insertSql = [insertSql stringByAppendingString:@":"];
+                NSString* valuestr = [NSString stringWithFormat:@"'%@'",value];
+                insertSql = [insertSql stringByAppendingString:valuestr];
+                //                insertSql = [insertSql stringByAppendingString:key];
+                insertSql = [insertSql stringByAppendingString:@","];
+            }
         }
         
         
@@ -321,19 +372,28 @@
     [propertys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         
         NSString * type =  [propertys valueForKey:key];
-        id value  =  [entity valueForKey:key];
         
-        if(value == nil || [type myContainsString:@"PrimaryKey"]){
+        if([type myContainsString:@"NSNumber"] ||
+           [type myContainsString:@"NSData"] ||
+           [type myContainsString:@"TB"] ||
+           [type myContainsString:@"Tq"] ||
+           [type myContainsString:@"Tf"] ||
+           [type myContainsString:@"Td"] ||
+           [type myContainsString:@"NSString"]
+           ){
+            id value  =  [entity valueForKey:key];
             
-            
-        }else {
-            
-            updateSql = [updateSql stringByAppendingFormat:@" %@ = :%@,",key,key];
-            [sqlinfo.arguments setValue:value forKey:key];
+            if(value == nil || [type myContainsString:@"PrimaryKey"]){
+                
+                
+            }else {
+                
+                updateSql = [updateSql stringByAppendingFormat:@" %@ = '%@',",key,value];
+                [sqlinfo.arguments setValue:value forKey:key];
+                
+            }
             
         }
-        
-        
         
     }];
     
@@ -347,7 +407,10 @@
     
 }
 
-+(NSString *) buildDeleteSql :(Class )class
++(NSString *) buildDeleteSql :(Class )class{
+    return  [self buildDeleteSql:class where:nil];
+}
++(NSString *) buildDeleteSql :(Class )class where:(NSString*)where
 {
     
     TableInfo * tableInf =  [TableInfo getTableInfo:class];
@@ -355,6 +418,11 @@
     NSString* delSql = @"DELETE FROM ";
     delSql  =  [delSql stringByAppendingString:[tableInf getTableName]];
     
+    if (where) {
+        delSql = [delSql stringByAppendingString:@" WHERE "];
+        
+        delSql = [delSql stringByAppendingString:where];
+    }
     
     return delSql;
     
@@ -362,3 +430,4 @@
 
 
 @end
+

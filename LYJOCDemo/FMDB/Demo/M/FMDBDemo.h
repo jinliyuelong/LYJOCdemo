@@ -10,7 +10,7 @@
 #import "NSObject+TSStorageManager.h"
 
 @interface FMDBDemo : NSObject
-@property (nonatomic,strong) PrimaryKey * fmdbid;//主键
+@property (nonatomic, copy) NSString* userId;//主键
 @property (nonatomic, assign)  BOOL  istrul;
 @property (nonatomic, assign)  BOOL  istrul2;
 @property (nonatomic, assign)  NSInteger  number1;

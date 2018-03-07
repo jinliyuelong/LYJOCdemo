@@ -10,6 +10,6 @@
 #import "NSObject+TSStorageManager.h"
 
 @interface FMDBDemo2 : NSObject
-@property (nonatomic,strong) PrimaryKey * fmdbid;//主键
+//@property (nonatomic,strong) PrimaryKey * fmdbid;//主键
 @property (nonatomic, copy)  NSString*  test;
 @end

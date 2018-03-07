@@ -11,6 +11,8 @@
 
 @implementation FMDBDemo
 
-
++(NSString*)primaryKeyName{
+    return @"userId";
+}
 
 @end

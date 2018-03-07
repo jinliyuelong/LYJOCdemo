@@ -8,6 +8,7 @@
 
 #import "TableInfo.h"
 #import <objc/runtime.h>
+#import "NSObject+TSStorageManager.h"
 
 static NSMutableDictionary * tableInfoMap;
 
@@ -37,7 +38,7 @@ static NSMutableDictionary * tableInfoMap;
         _myClass = class;
         _propertyMap = [[NSMutableDictionary alloc] init];
         isTableExist = NO;
-        
+        _primaryFieldName = nil;
         [self initTableInfo];
     }
     
@@ -63,20 +64,34 @@ static NSMutableDictionary * tableInfoMap;
 {
     unsigned int outCount, i;
     
+    
     objc_property_t *properties = class_copyPropertyList(_myClass, &outCount);
+    if ([_myClass respondsToSelector:@selector(primaryKeyName)]) {
+        _primaryFieldName = [_myClass primaryKeyName];
+    }
+    
     for (i = 0; i < outCount; i++) {
         objc_property_t property = properties[i];
         NSString * propertyName = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
         NSString * attributeName = [[NSString alloc] initWithCString: property_getAttributes(property) encoding:NSUTF8StringEncoding];
-        NSRange range = [attributeName rangeOfString:@"PrimaryKey"];
-        if(range.length !=0){
-            _primaryFieldName = propertyName;
-        }
+        
+        
+       
+//
+//
+      
+        
+       
         [_propertyMap setObject:attributeName forKey:propertyName];
         
         
     }
 
+    if(_primaryFieldName == nil){
+        _primaryFieldName = @"fmdbid";
+        [_propertyMap setObject:@"PrimaryKey" forKey:@"fmdbid"];
+        
+    }
 }
 
 -(NSString *)getPrimaryFieldName
